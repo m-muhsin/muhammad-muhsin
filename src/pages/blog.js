@@ -11,14 +11,25 @@ const Blog = (props) => (
     </p>
       {
         props.data && 
-        props.data.allWordpressPost.edges.map(edge => (
-            <div key={edge.node.id}>
-              <Link style={{ color: '#15A9D6', textDecoration: 'none' }} to={`blog/${edge.node.slug}`}>
-                <h3 dangerouslySetInnerHTML={{ __html: edge.node.title }} />
-              </Link>
-              <div dangerouslySetInnerHTML={{ __html: edge.node.excerpt.replace(/<a(.*?)<\/a>/g, "") }} />
-            </div>
-        ))
+        props.data.allWordpressPost.edges.map(edge => {
+          const date = new Date(edge.node.date);
+          var monthNames = [
+            "January", "February", "March",
+            "April", "May", "June", "July",
+            "August", "September", "October",
+            "November", "December"
+          ];
+          const formattedDate = `${date.getDate()} ${monthNames[date.getMonth()]} ${date.getFullYear()}`
+          return (
+              <div key={edge.node.id}>
+                <Link style={{ color: '#15A9D6', textDecoration: 'none' }} to={`blog/${edge.node.slug}`}>
+                  <h3 style={{ marginBottom: 5 }} dangerouslySetInnerHTML={{ __html: edge.node.title }} />
+                </Link>
+                <div style={{ marginBottom: 15 }}>By <b>{edge.node.author.name}</b> on <u>{formattedDate}</u></div>
+                <div dangerouslySetInnerHTML={{ __html: edge.node.excerpt.replace(/<a(.*?)<\/a>/g, "") }} />
+              </div>
+          )
+        })
       }
   </Layout>
 )
