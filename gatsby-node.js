@@ -1,8 +1,8 @@
-const _ = require(`lodash`)
+// const _ = require(`lodash`)
 const Promise = require(`bluebird`)
 const path = require(`path`)
 const slash = require(`slash`)
-const webpackLodashPlugin = require('lodash-webpack-plugin')
+// const webpackLodashPlugin = require('lodash-webpack-plugin')
 
 exports.createPages = ({ graphql, boundActionCreators }) => {
   const { createPage } = boundActionCreators
@@ -33,7 +33,7 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
             reject(result.errors)
         }
         const postTemplate = path.resolve(`./src/templates/post.js`)
-        _.each(result.data.allWordpressPost.edges, edge => {
+        result.data.allWordpressPost.edges.forEach(edge => {
             createPage({
                 path: `/blog/${edge.node.slug}`,
                 component: slash(postTemplate),
@@ -47,10 +47,10 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     })
 }
 
-exports.onCreateWebpackConfig = ({ stage, actions }) => {
-  if (stage === 'build-javascript') {
-    actions.setWebpackConfig({
-        plugins: [webpackLodashPlugin],
-    })
-  }
-}
+// exports.onCreateWebpackConfig = ({ stage, actions }) => {
+//   if (stage === 'build-javascript') {
+//     actions.setWebpackConfig({
+//         plugins: [webpackLodashPlugin],
+//     })
+//   }
+// }
