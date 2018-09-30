@@ -629,3 +629,12 @@ a {
   color: rgb(21, 169, 214);
   font-weight: 700;
 }
+
+::selection {
+  background: rgb(21, 169, 214); /* WebKit/Blink Browsers */
+  color: white;
+}
+::-moz-selection {
+  background: rgb(21, 169, 214); /* Gecko Browsers */
+  color: white;
+}

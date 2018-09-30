@@ -30,6 +30,7 @@ const Header = ({ siteTitle }) => (
       <div
         style={{
           color: 'white',
+          marginTop: 5
         }}
       >
         <Link

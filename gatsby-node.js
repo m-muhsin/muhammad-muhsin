@@ -1,29 +1,20 @@
-// const _ = require(`lodash`)
 const Promise = require(`bluebird`)
 const path = require(`path`)
 const slash = require(`slash`)
-// const webpackLodashPlugin = require('lodash-webpack-plugin')
 
-exports.createPages = ({ graphql, boundActionCreators }) => {
-  const { createPage } = boundActionCreators
+exports.createPages = ({ graphql, actions }) => {
+  const { createPage } = actions
   return new Promise((resolve, reject) => {
     graphql(
         `
         {
             allWordpressPost {
-            edges {
-                node {
-                id
-                slug
-                modified
-                tags {
-                    name
+                edges {
+                    node {
+                        id
+                        slug
+                    }
                 }
-                categories {
-                    name
-                }
-                }
-            }
             }
         }
         `
@@ -46,11 +37,3 @@ exports.createPages = ({ graphql, boundActionCreators }) => {
     })
     })
 }
-
-// exports.onCreateWebpackConfig = ({ stage, actions }) => {
-//   if (stage === 'build-javascript') {
-//     actions.setWebpackConfig({
-//         plugins: [webpackLodashPlugin],
-//     })
-//   }
-// }

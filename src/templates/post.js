@@ -4,7 +4,7 @@ import Layout from '../components/layout'
 
 export default class PostTemplate extends React.Component {
   render() {
-    const { slug } = this.props.pathContext
+    const { slug } = this.props.pageContext
     const postNode = this.props.data.wordpressPost
     if (!postNode.id) {
       postNode.id = slug
