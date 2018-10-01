@@ -626,15 +626,15 @@ pre tt:after {
 }
 
 a {
-  color: rgb(21, 169, 214);
+  color: #139FC9;
   font-weight: 700;
 }
 
 ::selection {
-  background: rgb(21, 169, 214); /* WebKit/Blink Browsers */
+  background: #139FC9; /* WebKit/Blink Browsers */
   color: white;
 }
 ::-moz-selection {
-  background: rgb(21, 169, 214); /* Gecko Browsers */
+  background: #139FC9; /* Gecko Browsers */
   color: white;
 }

@@ -22,7 +22,7 @@ const Blog = (props) => (
           const formattedDate = `${date.getDate()} ${monthNames[date.getMonth()]} ${date.getFullYear()}`
           return (
               <div key={edge.node.id}>
-                <Link style={{ color: '#15A9D6', textDecoration: 'none' }} to={`blog/${edge.node.slug}`}>
+                <Link style={{ color: '#139FC9', textDecoration: 'none' }} to={`blog/${edge.node.slug}`}>
                   <h3 style={{ marginBottom: 5 }} dangerouslySetInnerHTML={{ __html: edge.node.title }} />
                 </Link>
                 <div style={{ marginBottom: 15 }}>By <b>{edge.node.author.name}</b> on <u>{formattedDate}</u></div>
