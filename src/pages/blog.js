@@ -4,10 +4,10 @@ import { Link, graphql } from 'gatsby'
 import Layout from '../components/layout'
 
 const Blog = (props) => (
-  <Layout>
+  <Layout title="Blog">
     <h1>Blog</h1>
     <p>Welcome to the blog page! Here, you will see posts pulled in from&nbsp;
-      <a rel="noopener noreferrer" target="_blank" href="http://mtwoblog.com/">my blog</a>.
+      <a rel="noopener noreferrer" target="_blank" href="http://mtwoblog.com/">my existing blog</a>.
     </p>
       {
         props.data && 

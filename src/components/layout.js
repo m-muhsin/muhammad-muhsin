@@ -20,10 +20,10 @@ const Layout = ({ title, children }) => (
     render={data => (
       <>
         <Helmet
-          title={data.site.siteMetadata.title}
+          title={title ? `${title} | ${data.site.siteMetadata.title}` : data.site.siteMetadata.title}
           meta={[
-            { name: 'description', content: 'Sample' },
-            { name: 'keywords', content: 'sample, something' },
+            { name: 'description', content: 'Welcome to the homepage of Muhammad Muhsin!' },
+            { name: 'keywords', content: 'muhammad, muhsin, site, homepage' },
           ]}
         >
           <html lang="en" />
