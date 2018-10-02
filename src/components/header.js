@@ -22,11 +22,11 @@ const Header = ({ siteTitle }) => (
         </Link>
       </h1>
       <div style={{ marginTop: 5 }}>
-        <Link to="/" style={{ color: 'white', fontSize: 24 }}>
+        <Link to="/" style={{ color: 'white', fontSize: '1.4em' }}>
           Home
         </Link>
         &nbsp;
-        <Link to="blog" style={{ color: 'white', fontSize: 24 }}>
+        <Link to="blog" style={{ color: 'white', fontSize: '1.4em' }}>
           Blog
         </Link>
       </div>
