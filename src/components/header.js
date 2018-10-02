@@ -17,37 +17,16 @@ const Header = ({ siteTitle }) => (
       }}
     >
       <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
+        <Link to="/" style={{ color: 'white', textDecoration: 'none', }}>
           {siteTitle}
         </Link>
       </h1>
-      <div
-        style={{
-          color: 'white',
-          marginTop: 5
-        }}
-      >
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-          }}
-        >
+      <div style={{ marginTop: 5 }}>
+        <Link to="/" style={{ color: 'white', fontSize: 24 }}>
           Home
         </Link>
         &nbsp;
-        <Link
-          to="blog"
-          style={{
-            color: 'white',
-          }}
-        >
+        <Link to="blog" style={{ color: 'white', fontSize: 24 }}>
           Blog
         </Link>
       </div>
