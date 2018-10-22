@@ -22,7 +22,7 @@ const IndexPage = () => (
     <div style={{ maxWidth: 700, textAlign: 'center', margin: 'auto', marginTop: 10, marginBottom: 10 }}>
       <SocialLink link="https://github.com/m-muhsin/" image="github" />
       <SocialLink link="https://twitter.com/muhsinlk/" image="twitter" />
-      <SocialLink link="http://mtwoblog.com/" image="wordpress" />
+      <SocialLink link="http://mtwoblog.com/" image="m2blog" />
       <SocialLink link="https://www.smashingmagazine.com/author/muhammad-muhsin/" image="smashing" />
       <SocialLink link="https://www.linkedin.com/in/mmuhsin/" image="linkedin" />
       <SocialLink link="https://www.instagram.com/m_muhsin/" image="instagram" />
