@@ -1,4 +1,5 @@
 import React from 'react'
+import { graphql } from 'gatsby'
 
 import Layout from '../components/layout'
 
@@ -9,18 +10,33 @@ export default class PostTemplate extends React.Component {
     if (!postNode.id) {
       postNode.id = slug
     }
-    const date = new Date(postNode.date);
+    const date = new Date(postNode.date)
     var monthNames = [
-      "January", "February", "March",
-      "April", "May", "June", "July",
-      "August", "September", "October",
-      "November", "December"
-    ];
-    const formattedDate = `${date.getDate()} ${monthNames[date.getMonth()]} ${date.getFullYear()}`
+      'January',
+      'February',
+      'March',
+      'April',
+      'May',
+      'June',
+      'July',
+      'August',
+      'September',
+      'October',
+      'November',
+      'December',
+    ]
+    const formattedDate = `${date.getDate()} ${
+      monthNames[date.getMonth()]
+    } ${date.getFullYear()}`
     return (
       <Layout title={postNode.title}>
-        <h1 style={{ marginBottom: 10 }} dangerouslySetInnerHTML={{ __html: postNode.title }} />
-        <div style={{ marginBottom: 20 }}>By <b>{postNode.author.name}</b> on <u>{formattedDate}</u></div>
+        <h1
+          style={{ marginBottom: 10 }}
+          dangerouslySetInnerHTML={{ __html: postNode.title }}
+        />
+        <div style={{ marginBottom: 20 }}>
+          By <b>{postNode.author.name}</b> on <u>{formattedDate}</u>
+        </div>
         <div>
           <div dangerouslySetInnerHTML={{ __html: postNode.content }} />
         </div>
