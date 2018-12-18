@@ -88,6 +88,10 @@ sup {
 img {
   border-style: none;
 }
+figure, img {
+  height: auto;
+  max-width: 100%;
+}
 svg:not(:root) {
   overflow: hidden;
 }
@@ -637,4 +641,37 @@ a {
 ::-moz-selection {
   background: #139FC9; /* Gecko Browsers */
   color: white;
+}
+
+.nav-link {
+  color: white;
+  font-size: 1.4em;
+  text-decoration: none;
+}
+
+.nav-link.active {
+  border-bottom: 2px solid white;
+}
+
+
+img.employee-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin: 15px;
+}
+
+@media (min-width: 768px) {
+  .employee-container {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+
+.employee {
+  text-align: center;
+}
+
+span.employee-title {
+  font-size: 14px;
 }
