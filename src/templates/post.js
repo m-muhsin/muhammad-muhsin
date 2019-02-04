@@ -25,9 +25,9 @@ export default class PostTemplate extends React.Component {
       'November',
       'December',
     ]
-    const formattedDate = `${date.getDate()} ${
+    const formattedDate = `${
       monthNames[date.getMonth()]
-    } ${date.getFullYear()}`
+    } ${date.getDate()}, ${date.getFullYear()}`
     return (
       <Layout title={postNode.title}>
         <h1
@@ -35,7 +35,7 @@ export default class PostTemplate extends React.Component {
           dangerouslySetInnerHTML={{ __html: postNode.title }}
         />
         <div style={{ marginBottom: 20 }}>
-          By <b>{postNode.author.name}</b> on <u>{formattedDate}</u>
+          Published on <b>{formattedDate}</b>
         </div>
         <div>
           <div dangerouslySetInnerHTML={{ __html: postNode.content }} />
